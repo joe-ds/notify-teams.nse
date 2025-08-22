@@ -16,7 +16,7 @@ license = "Same as Nmap--See https://nmap.org/book/man-legal.html"
 categories = {"external"}
 
 -- @usage
--- nmap --script notify.nse --script-args --script-args 'notify.webhook_url=https://submarine.earth.logic.azure.com:443/workflows/deadbeef/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1337' <target> <nmap scan options>
+-- nmap --script notify-teams.nse --script-args 'notify.webhook_url=https://submarine.earth.logic.azure.com:443/workflows/deadbeef/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1337' <target> <nmap scan options>
 
 local webhook_url = stdnse.get_script_args("notify.webhook_url")
 
@@ -63,4 +63,5 @@ action = function(host)
 		end
 
         return owner
+
 end
